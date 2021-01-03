@@ -19,6 +19,9 @@
         {{- end }}
     </main>
     {{- partialCached "footer.html" . .Type .Layout .Params }}
+    {{ if and .Site.Params.cloudflare .Site.Params.cloudflare.token }}
+      {{- partial "analytics/cloudflare" . -}}
+    {{ end }}
 </body>
 
 </html>
